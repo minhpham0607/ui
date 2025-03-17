@@ -11,7 +11,7 @@ public class RequestController {
 
     @RequestMapping("")
     public String openRequestView(Model model) {
-        model.addAttribute("request", new Request()); // Tạo đối tượng Request hợp lệ
-        return "requests"; // Trả về tên view (có thể là "requests.html" nếu dùng Thymeleaf)
+        model.addAttribute("request", new Request());
+        return "requests";
     }
 }
