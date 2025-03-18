@@ -4,15 +4,12 @@ import com.example.hrms.common.http.criteria.Page;
 import com.example.hrms.enumation.RequestStatusEnum;
 import com.example.hrms.enumation.RequestTypeEnum;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class RequestCriteria extends Page {
     private Long requestId;
     private String username;
@@ -23,25 +20,20 @@ public class RequestCriteria extends Page {
     private String approverUsername;
     private Date startTime;
     private Date endTime;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
-    private Timestamp approvedAt;
 
-    @Override
-    public String toString() {
-        return "RequestCriteria{" +
-                "requestId=" + requestId +
-                ", username='" + username + '\'' +
-                ", departmentId=" + departmentId +
-                ", requestType=" + requestType +
-                ", requestReason='" + requestReason + '\'' +
-                ", requestStatus=" + requestStatus +
-                ", approverUsername='" + approverUsername + '\'' +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", approvedAt=" + approvedAt +
-                '}';
+    public RequestCriteria() {}
+
+    public RequestCriteria(Long requestId, String username, Long departmentId, RequestTypeEnum requestType,
+                           String requestReason, RequestStatusEnum requestStatus, String approverUsername,
+                           Date startTime, Date endTime ){
+        this.requestId = requestId;
+        this.username = username;
+        this.departmentId = departmentId;
+        this.requestType = requestType;
+        this.requestReason = requestReason;
+        this.requestStatus = requestStatus;
+        this.approverUsername = approverUsername;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 }
